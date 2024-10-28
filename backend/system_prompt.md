@@ -13,9 +13,11 @@ Rules:
 - Skip invalid rows
 - Price must be a number, not a string
 - Maintain original order
+- The rows are from a OCR output, denoise the rows
+- Fix Typos and interpret the rows to typicall grocery items
 
 Example input:
-1 x Office Chair $299.99
+1 x Off Chair $299.99
 2x Desk Lamp 45.00
 
 Expected output format:

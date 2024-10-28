@@ -12,8 +12,13 @@ def process_invoices(rows: List[str]) -> List[Dict]:
         temperature=0.1,
     )
     
-    # Create a prompt that explicitly asks for array brackets
-    prompt = f"""You are a JSON processing tool. Output ONLY a JSON array with square brackets.
+    # Load the system prompt
+    system_prompt = load_system_prompt()
+    
+    # Create a prompt that includes the system prompt
+    prompt = f"""{system_prompt}
+
+You are a JSON processing tool. Output ONLY a JSON array with square brackets.
 The output must start with '[' and end with ']'.
 
 EXAMPLE CORRECT OUTPUT:
