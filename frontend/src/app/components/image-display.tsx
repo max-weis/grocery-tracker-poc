@@ -1,18 +1,17 @@
 import Image from 'next/image'
 
 interface ImageDisplayProps {
-  imageUrl: string
+  src: string
 }
 
-export default function ImageDisplay({ imageUrl }: ImageDisplayProps) {
+export function ImageDisplay({ src }: ImageDisplayProps) {
   return (
-    <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden">
-      <Image 
-        src={imageUrl} 
-        alt="Uploaded image" 
-        layout="fill"
-        objectFit="contain"
-      />
-    </div>
+    <Image
+      src={src}
+      alt="Uploaded image"
+      width={500}
+      height={500}
+      className="w-full h-auto object-contain rounded-lg shadow-md"
+    />
   )
 }
